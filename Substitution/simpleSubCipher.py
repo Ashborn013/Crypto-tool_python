@@ -9,12 +9,18 @@ import pyperclip, sys, random
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def main():
-    myMessage = 'If a man is offered a fact which goes against his instincts, he will scrutinize it closely, and unless the evidence is overwhelming, he will refuse to believe it. If, on the other hand, he is offered something which affords a reason for acting in accordance to his instincts, he will accept it even on the slightest evidence. The origin of myths is explained in this way. -Bertrand Russell'
-    myKey = 'LFWOAYUISVKMNXPBDCRJTQEGHZ'
-    myMode = 'encrypt' # set to 'encrypt' or 'decrypt'
+    myMessage = input("Enter The Message:-")
+    myKey = input("Enter The Key")
+    myMode = input("encrypt or decrypt :-") # set to 'encrypt' or 'decrypt'
 
+    if len(myKey) == 0:
+        myKey = getRandomKey()   
+    print(myKey)
+    print(len(myKey))
+    print(len(LETTERS))
     checkValidKey(myKey)
 
+    
     if myMode == 'encrypt':
         translated = encryptMessage(myKey, myMessage)
     elif myMode == 'decrypt':
