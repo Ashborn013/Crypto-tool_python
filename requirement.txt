@@ -1,0 +1,11 @@
+tabulate
+itertools
+re
+pathlib
+random
+sys
+pyperclip
+secrets
+math
+pprint
+copy

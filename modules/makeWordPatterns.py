@@ -1,4 +1,5 @@
 import pprint
+import os
 def getWordPattern(word):
     # Returns a string of the pattern form of the given word.
     # e.g. '0.1.2.3.4.1.2.3.5.6' for 'DUSTBUSTER'
@@ -18,7 +19,8 @@ def getWordPattern(word):
 def main():
     allPatterns = {}
 
-    fo = open('dictionary.txt')
+    fo = open(os.path.join(os.path.dirname(__file__), 'dictionary.txt'))
+    #fo = open('dictionary.txt')
     wordList = fo.read().split('\n')
     fo.close()
 
@@ -33,7 +35,7 @@ def main():
 
     # This is code that writes code. The wordPatterns.py file contains
     # one very, very large assignment statement.
-    fo = open('wordPatterns.py', 'w')
+    fo = open(os.path.join(os.path.dirname(__file__), 'wordPatterns.py'), 'w')
     fo.write('allPatterns = ')
     fo.write(pprint.pformat(allPatterns))
     fo.close()

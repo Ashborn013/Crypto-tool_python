@@ -1,19 +1,24 @@
+import sys
+sys.path.append('../')
 
-import os, re, copy, pprint, pyperclip, simpleSubCipher, makeWordPatterns
+import os, re, copy, pprint, pyperclip
+import Substitution.simpleSubCipher as simpleSubCipher
+import modules.makeWordPatterns as makeWordPatterns
 
 if not os.path.exists('wordPatterns.py'):
     makeWordPatterns.main() # create the wordPatterns.py file
-import wordPatterns
+
+import modules.wordPatterns as wordPatterns
 
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 nonLettersOrSpacePattern = re.compile('[^A-Z\s]')
 
-def main():
+def main(message):
     # message = 'Sy l nlx sr pyyacao l ylwj eiswi upar lulsxrj isr sxrjsxwjr, ia esmm rwctjsxsza sj wmpramh, lxo txmarr jia aqsoaxwa sr pqaceiamnsxu, ia esmm caytra jp famsaqa sj. Sy, px jia pjiac ilxo, ia sr pyyacao rpnajisxu eiswi lyypcor l calrpx ypc lwjsxu sx lwwpcolxwa jp isr sxrjsxwjr, ia esmm lwwabj sj aqax px jia rmsuijarj aqsoaxwa. Jia pcsusx py nhjir sr agbmlsxao sx jisr elh. -Facjclxo Ctrramm'
     # message = 'zq lj wzlrw jmb sotv'
-    # message='''Yn snrzk db rfeynkomnh ungifn rboibn vbnw hjey kydbph nadhkns, rbs ydh rudzdko ki krvn rb nqikdib if r hdkjrkdib rbs mjhy dk ki kyn zdqdk ynzmns efnrkn r ersfn ig mzroh kyrk yrln unnb nbsznhhzo hkrpns – rbs eimdns. Rmrfk gfiq kyn narqmznh unziw, Fiqni rbs Xjzdnk dbhmdfns Qrzifdn Uzrevqrb'h Bijpykh & Efihhnh, kynfn rfn fngnfnbenh ki Yrqznk db Zjbrf Mrfv uo Ufnk Nrhkib Nzzdh rbs Kyn Knqmnhk wrh kyn ejn gif Kyn Qrpjh uo Xiyb Giwznh.Ujk Qreunky dh qo grlijfdkn – r mfngnfnben D rmmrfnbkzo hyrfn wdky Xi Bnhui, wyi fnenbkzo rbbijbens kyrk ydh bnw bidf efdqn bilnz wijzs un urhns ib kyn Heikkdhy mzro. Dkh hdbdhknf qrpde dh rzhi kyn dbhmdfrkdib unydbs qo ydhkifderz bilnz Srfv Rnqdzdr.Db Xreiunrb kdqnh, kyn ieejzk wrh reenmkns rh mrfk ig nlnfosro zdgn, rbs wdkeyefrgk wrh uiky gnrfns rbs hijpyk ijk rh r jhngjz fnhijfen. D kfdns ki eyrbbnz hiqn ig kydh, rbs fnefnrkn kyn mhoeyizipo ig r gnrfgjz, hjmnfhkdkdijh rpn.'''
+    #message='''Yn snrzk db rfeynkomnh ungifn rboibn vbnw hjey kydbph nadhkns, rbs ydh rudzdko ki krvn rb nqikdib if r hdkjrkdib rbs mjhy dk ki kyn zdqdk ynzmns efnrkn r ersfn ig mzroh kyrk yrln unnb nbsznhhzo hkrpns – rbs eimdns. Rmrfk gfiq kyn narqmznh unziw, Fiqni rbs Xjzdnk dbhmdfns Qrzifdn Uzrevqrb'h Bijpykh & Efihhnh, kynfn rfn fngnfnbenh ki Yrqznk db Zjbrf Mrfv uo Ufnk Nrhkib Nzzdh rbs Kyn Knqmnhk wrh kyn ejn gif Kyn Qrpjh uo Xiyb Giwznh.Ujk Qreunky dh qo grlijfdkn – r mfngnfnben D rmmrfnbkzo hyrfn wdky Xi Bnhui, wyi fnenbkzo rbbijbens kyrk ydh bnw bidf efdqn bilnz wijzs un urhns ib kyn Heikkdhy mzro. Dkh hdbdhknf qrpde dh rzhi kyn dbhmdfrkdib unydbs qo ydhkifderz bilnz Srfv Rnqdzdr.Db Xreiunrb kdqnh, kyn ieejzk wrh reenmkns rh mrfk ig nlnfosro zdgn, rbs wdkeyefrgk wrh uiky gnrfns rbs hijpyk ijk rh r jhngjz fnhijfen. D kfdns ki eyrbbnz hiqn ig kydh, rbs fnefnrkn kyn mhoeyizipo ig r gnrfgjz, hjmnfhkdkdijh rpn.'''
     # Determine the possible valid ciphertext translations.
-    message = input("Enter The Cipher Text:-")
+    # message = input("Enter The Cipher Text:-")
     print('Hacking...')
     letterMapping = hackSimpleSub(message)
 
@@ -153,4 +158,5 @@ def decryptWithCipherletterMapping(ciphertext, letterMapping):
 
 
 if __name__ == '__main__':
-    main()
+    message = 'zq lj wzlrw jmb sotv'
+    main(message)

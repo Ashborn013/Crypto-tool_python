@@ -1,7 +1,8 @@
-def Caesar_Cipher():
+import secrets
+def Caesar_Cipher(mode):
     # Caesar Cipher
-
-    mode = input("Decrypt/Encrypt/Brute (D/E/B) ")
+    mode = mode.lower()
+    #mode = input("Decrypt/Encrypt/Brute (D/E/B) ")
     if mode in ("Decrypt", "decrypt", "D", "d"):
         message = input("Enter CT:")
         key = int(input("Enter key:"))
@@ -18,7 +19,7 @@ def Caesar_Cipher():
             return
         print(f"the key is {key}")
         mode = 'encrypt'
-    elif mode in ("Brute", "B", "b"):
+    elif mode in ("brute", "B", "b"):
         message = input("Enter CT:")
         mode = 'brute'
 
@@ -71,3 +72,6 @@ def Caesar_Cipher():
     # print the encrypted/decrypted string to the screen
     print(f'the {mode}ed text is {translated}')
     # copy the encrypted/decrypted string to the clipboard
+
+if __name__ == "__main__":
+    Caesar_Cipher("encrypt")

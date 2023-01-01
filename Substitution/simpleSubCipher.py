@@ -1,20 +1,15 @@
-
-
-# Simple Substitution Cipher
-# http://inventwithpython.com/hacking (BSD Licensed)
-
 import pyperclip, sys, random
 
 
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-def main():
+def main(myMode):
     myMessage = input("Enter The Message:-")
     myKey = input("Enter The Key")
-    myMode = input("encrypt or decrypt :-") # set to 'encrypt' or 'decrypt'
+    #myMode = input("encrypt or decrypt :-") # set to 'encrypt' or 'decrypt'
 
     if len(myKey) == 0:
-        myKey = getRandomKey()   
+        myKey = getRandomKey()
     checkValidKey(myKey)
     if myMode == 'encrypt':
         translated = encryptMessage(myKey, myMessage)
@@ -77,4 +72,5 @@ def getRandomKey():
 
 
 if __name__ == '__main__':
-    main()
+    mode = "encrypt"
+    main(mode)
