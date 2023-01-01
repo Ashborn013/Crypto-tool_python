@@ -1,8 +1,3 @@
-
-
-# Simple Substitution Cipher
-# http://inventwithpython.com/hacking (BSD Licensed)
-
 import pyperclip, sys, random
 
 
