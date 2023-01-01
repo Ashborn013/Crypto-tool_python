@@ -1,6 +1,4 @@
 import pprint
-
-
 def getWordPattern(word):
     # Returns a string of the pattern form of the given word.
     # e.g. '0.1.2.3.4.1.2.3.5.6' for 'DUSTBUSTER'

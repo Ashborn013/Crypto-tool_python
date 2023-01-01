@@ -15,12 +15,7 @@ def main():
 
     if len(myKey) == 0:
         myKey = getRandomKey()   
-    print(myKey)
-    print(len(myKey))
-    print(len(LETTERS))
     checkValidKey(myKey)
-
-    
     if myMode == 'encrypt':
         translated = encryptMessage(myKey, myMessage)
     elif myMode == 'decrypt':
