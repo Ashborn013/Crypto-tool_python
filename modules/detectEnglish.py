@@ -7,11 +7,14 @@
 # (There must be a "dictionary.txt" file in this directory with all English
 # words in it, one word per line. You can download this from
 # http://invpy.com/dictionary.txt)
+
+import os
+
 UPPERLETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 LETTERS_AND_SPACE = UPPERLETTERS + UPPERLETTERS.lower() + ' \t\n'
 
 def loadDictionary():
-    dictionaryFile = open('dictionary.txt')
+    dictionaryFile = open(os.path.join(os.path.dirname(__file__),'dictionary.txt'))
     englishWords = {}
     for word in dictionaryFile.read().split('\n'):
         englishWords[word] = None
