@@ -1,17 +1,12 @@
 import sys as s
 # s.path.append('./Affine/')
 from tabulate import tabulate
-# from Vigenere import vigenereCipher, vigenereHacking, vigenereDictionaryHacking
-# from Affine import affine, affineHack
-# from Caesar import caesar
-# from Transposition import transposition, transpositionHacking
-# from Substitution import simpleSubCipher, simpleSubHacker
+from Vigenere import vigenereCipher, vigenereHacking, vigenereDictionaryHacking
+from Affine import affine, affineHack
+from Caesar import caesar
+from Transposition import transposition, transpositionHacking
+from Substitution import simpleSubCipher, simpleSubHacker
 
-import Affine 
-import Vigenere
-import Caesar
-import Transposition
-import Substitution
 
 def getMode(hacks = ["Hacking"], val=0):
     modes = [[1, "Encryption"],
@@ -61,7 +56,8 @@ while True:
     elif choice == 2:
         mode = getMode(hacks=["brute"], val=1)
         mode = mode.rstrip("ion")
-        Caesar.Caesar.Caesar_Cipher(mode)
+        # Caesar.Caesar.Caesar_Cipher(mode)
+        Caesar.Caesar_Cipher(mode)
 
     #affine cipher
     elif choice == 3: #affine cipher
