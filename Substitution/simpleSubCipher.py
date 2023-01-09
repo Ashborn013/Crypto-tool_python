@@ -1,4 +1,5 @@
 import pyperclip, sys, random
+sys.path.append('../')
 
 
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'

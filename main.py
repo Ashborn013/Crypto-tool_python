@@ -1,10 +1,11 @@
-# from tabulate import tabulate
-# from Vigenere import vigenereCipher, vigenereHacking, vigenereDictionaryHacking
-# # from Affine import affine, affineHack
-# from Caesar import caesar
-# from Transposition import transposition, transpositionHacking
-# from Substitution import simpleSubCipher, simpleSubHacker
+from tabulate import tabulate
+import modules
 
+import Substitution as S
+import Caesar as C
+# import Affine
+import Transposition as T
+import Vigenere as V
 
 def getMode(hacks = ["Hacking"], val=0):
     modes = [[1, "Encryption"],
@@ -43,11 +44,12 @@ while True:
         mode = getMode(val=1)
         if mode == "Hacking":
             message = input("Enter message: ")
-            simpleSubHacker.main(message)
+            S.simpleSubHacker.main(message)
+            # simpleSubHacker
         else:
             mode = mode.rstrip("ion").lower()
             print(mode)
-            simpleSubCipher.main(mode)
+            S.simpleSubCipher.main(mode)
 
 
     #Caesar chipher
@@ -64,10 +66,10 @@ while True:
         if mode == 1 or mode == 2:
             key = int(input("Enter key: "))
             if mode == 1:
-                ct = affine.encryptMessage(key, message)
+                ct = Affine.encryptMessage(key, message)
                 print(ct)
             elif mode == 2:
-                pt = affine.decryptMessage(key, message)
+                pt = Affine.decryptMessage(key, message)
                 print(pt)
         elif mode == 3:
             affineHack.main(message)
@@ -76,9 +78,9 @@ while True:
     elif choice == 4:
         mode = getMode()
         if mode == 1 or mode == 2:
-            transposition.main(mode)
+            T.Transposition.main(mode)
         elif mode ==3:
-            transpositionHacking
+            T.transpositionHacking
 
     #vigenere cipher
     elif choice == 5: #vigenere cipher
@@ -88,17 +90,17 @@ while True:
         if mode == 1 or mode == 2:
             key = input("Enter Key: ")
             if mode == 1:
-                ct = vigenereCipher.encrypt(key, message)
+                ct = V.vigenereCipher.encrypt(key, message)
                 print(ct)
             else:
-                pt = vigenereCipher.decrypt(key, message)
+                pt = V.vigenereCipher.decrypt(key, message)
                 print(pt)
 
         #hacking
         elif mode == 3:
-            pt = vigenereDictionaryHacking.main(message)
+            pt = V.vigenereDictionaryHacking.main(message)
         elif mode == 4:
-            pt = vigenereHacking.main(message)
+            pt = V.vigenereHacking.main(message)
 
     #rsa
     elif choice == 6:

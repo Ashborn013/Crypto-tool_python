@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../')
 
-from Transposition.transposition import decryptMessage
+# from Transposition import decryptMessage
 from modules.detectEnglish import isEnglish
 
 def main():
