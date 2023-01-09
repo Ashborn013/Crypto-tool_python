@@ -66,7 +66,8 @@ while True:
         if mode == 1 or mode == 2:
             key = int(input("Enter key: "))
             if mode == 1:
-                ct = Affine.encryptMessage(key, message)
+                ct = Affine.Affine.encryptMessage(key, message)
+                
                 print(ct)
             elif mode == 2:
                 pt = Affine.decryptMessage(key, message)
