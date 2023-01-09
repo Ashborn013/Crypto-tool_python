@@ -3,7 +3,7 @@ import modules
 
 import Substitution as S
 import Caesar as C
-# import Affine
+import Affine
 import Transposition as T
 import Vigenere as V
 

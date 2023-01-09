@@ -2,7 +2,7 @@ import pyperclip, sys
 sys.path.append('../')
 
 # from Affine import affine
-import detectEnglish, cryptomath
+# import detectEnglish, cryptomath
 
 
 SILENT_MODE = False
