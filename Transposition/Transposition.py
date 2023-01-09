@@ -1,6 +1,6 @@
 import math
-def main():
-    choice = int(input("1: Encrypt\n 2: Decrypt\n"))
+def main(choice):
+    #choice = int(input("1: Encrypt\n 2: Decrypt\n"))
     if choice == 1:
         myMessage = input("Enter your message")
         myKey = int(input("Enter the key"))
@@ -36,7 +36,7 @@ def decryptMessage(key,message):
     plaintext = [''] *numOfColumns
 
     col = 0
-    row = 0 
+    row = 0
 
     for symbol in message:
         plaintext[col]+=symbol
