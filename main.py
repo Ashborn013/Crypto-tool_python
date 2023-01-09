@@ -1,5 +1,3 @@
-import sys as s
-# s.path.append('./Affine/')
 from tabulate import tabulate
 from Vigenere import vigenereCipher, vigenereHacking, vigenereDictionaryHacking
 from Affine import affine, affineHack
