@@ -1,9 +1,9 @@
-from tabulate import tabulate
-from Vigenere import vigenereCipher, vigenereHacking, vigenereDictionaryHacking
-from Affine import affine, affineHack
-from Caesar import caesar
-from Transposition import transposition, transpositionHacking
-from Substitution import simpleSubCipher, simpleSubHacker
+# from tabulate import tabulate
+# from Vigenere import vigenereCipher, vigenereHacking, vigenereDictionaryHacking
+# # from Affine import affine, affineHack
+# from Caesar import caesar
+# from Transposition import transposition, transpositionHacking
+# from Substitution import simpleSubCipher, simpleSubHacker
 
 
 def getMode(hacks = ["Hacking"], val=0):
