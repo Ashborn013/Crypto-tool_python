@@ -1,11 +1,10 @@
-pip install rsa
 import rsa
 
 def generateKeys():
     (publicKey, privateKey) = rsa.newkeys(1024)
     with open('keys/publcKey.pem', 'wb') as p:
         p.write(publicKey.save_pkcs1('PEM'))
-     with open('keys/privateKey.pem', 'wb') as p:
+    with open('keys/privateKey.pem', 'wb') as p:
         p.write(privateKey.save_pkcs1('PEM'))
 
 def loadKeys():
@@ -51,6 +50,6 @@ else:
     print(f'Unable to decrypt the message.')
 
 if verify(text, signature, publicKey):
-    print(Successfully verified signature)
+    print("Successfully verified signature")
 else:
     print('The message signature could not be verified')

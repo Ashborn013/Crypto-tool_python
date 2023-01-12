@@ -26,9 +26,9 @@ def generateKey(keySize):
 	print('Generating e that is relatively prime to (p-1)*(q-1)...')
 	while True:
 	# Keep trying random numbers for e until one is valid.
-	e = random.randrange(2 ** (keySize - 1), 2 ** (keySize))
-	if cryptomath.gcd(e, (p - 1) * (q - 1)) == 1:
-		break
+		e = random.randrange(2 ** (keySize - 1), 2 ** (keySize))
+		if cryptomath.gcd(e, (p - 1) * (q - 1)) == 1:
+			break
 
 # Step 3: Calculate d, the mod inverse of e.
 	print('Calculating d that is mod inverse of e...')
@@ -49,24 +49,24 @@ def makeKeyFiles(name, keySize):
 
 	# Our safety check will prevent us from overwriting our old key files:
 	if os.path.exists('%s_pubkey.txt' % (name)) or os.path.exists('%s_privkey.txt' % (name)):
-	sys.exit('WARNING: The file %s_pubkey.txt or %s_privkey.txt already exists! Use a different name or delete these files and re-run this program.' %(name, name))
+		sys.exit('WARNING: The file %s_pubkey.txt or %s_privkey.txt already exists! Use a different name or delete these files and re-run this program.' %(name, name))
 
-	publicKey, privateKey = generateKey(keySize)
+		publicKey, privateKey = generateKey(keySize)
 
-	print()
-	print('The public key is a %s and a %s digit number.' %(len(str(publicKey[0])), len(str(publicKey[1]))))
-	print('Writing public key to file %s_pubkey.txt...' % (name))
-	fo = open('%s_pubkey.txt' % (name), 'w')
-	fo.write('%s,%s,%s' % (keySize, publicKey[0], publicKey[1]))
+		print()
+		print('The public key is a %s and a %s digit number.' %(len(str(publicKey[0])), len(str(publicKey[1]))))
+		print('Writing public key to file %s_pubkey.txt...' % (name))
+		fo = open('%s_pubkey.txt' % (name), 'w')
+		fo.write('%s,%s,%s' % (keySize, publicKey[0], publicKey[1]))
 
-	fo.close()
+		fo.close()
 
-	print()
-	print('The private key is a %s and a %s digit number.' %(len(str(publicKey[0])), len(str(publicKey[1]))))
-	print('Writing private key to file %s_privkey.txt...' % (name))
-	fo = open('%s_privkey.txt' % (name), 'w')
-	fo.write('%s,%s,%s' % (keySize, privateKey[0], privateKey[1]))
-	fo.close()
+		print()
+		print('The private key is a %s and a %s digit number.' %(len(str(publicKey[0])), len(str(publicKey[1]))))
+		print('Writing private key to file %s_privkey.txt...' % (name))
+		fo = open('%s_privkey.txt' % (name), 'w')
+		fo.write('%s,%s,%s' % (keySize, privateKey[0], privateKey[1]))
+		fo.close()
 
 # If makeRsaKeys.py is run (instead of imported as a module) call
 # the main() function.
